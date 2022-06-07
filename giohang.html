@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+      
+
+    
+
+        
+
+        .content-page {
+            font-size: 25px;
+        }
+
+        .ten {
+            margin-top: 10px;
+        }
+        .container {
+            width: 600px;
+            margin: auto;
+            background: darkkhaki;
+            padding: 20px;
+            font-size: 1.2em
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+
+        caption {
+            font-weight: 600px;
+            font-size: 1.2em;
+        }
+
+        button {
+            width: 60px;
+            height: 25px;
+        }
+    </style>
+    <script>
+        document.getElementById("cart").style.display = "none";
+        function them(button) {
+            var row = button.parentElement.parentElement.cloneNode(true);
+            var btnXoa = row.getElementsByTagName("button")[0];
+            btnXoa.innerText = "Xóa";
+            btnXoa.setAttribute('onclick', 'xoa(this)');
+            document.getElementById("cart").appendChild(row);
+            tinhtong();
+            document.getElementById("cart").style.display = "";
+        }
+
+        function xoa(button) {
+            var row = button.parentElement.parentElement;
+            document.getElementById("cart").removeChild(row);
+        }
+
+        function tinhtong() {
+            var cart = document.getElementById("cart");
+            var rows = cart.getElementsByTagName("tr");
+            var tong = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var price = rows[i].children[2].innerText;
+                price = parseInt(price);
+                tong += price;
+            }
+            document.getElementById("tong").innerText = tong;
+            // if (tong > 0) {
+            //     document.getElementById("empty").style.display = "none"; //ẩn
+            //     document.getElementById("not-empty").style.display = ""; //hiện
+            // } else {
+            //     document.getElementById("empty").style.display = ""; //hiện
+            //     document.getElementById("not-empty").style.display = "none"; //ẩn
+            // }
+            if (tong > 6000) {
+                document.getElementById("tong").style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</head>
+
+<body>
+  
+        <center>
+            <h1><u>TÍNH TIỀN</u></h1>
+        </center>
+        <div class="container">
+            <center>
+            <table>
+                <caption> Các sản phẩm hoa</caption>
+                <thead>
+                    <tr>
+                        <td><input type="checkbox" class="chon" checked></td>
+                        <td>BLACK O.G SHIRT</td>
+                        <td>490000đ</td>
+                        <td><button onclick="them(this)"> Chọn </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="chon" checked></td>
+                        <td>SATIN GOLDEN</td>
+                        <td>380000đ</td>
+                        <td><button onclick="them(this)"> Chọn </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="chon" checked></td>
+                        <td>BANDANA M2</td>
+                        <td>336000đ</td>
+                        <td><button onclick="them(this)"> Chọn </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="chon" checked></td>
+                        <td>DARK SKY SHIRT</td>
+                        <td>350000đ</td>
+                        <td><button onclick="them(this)"> Chọn </button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="chon" checked></td>
+                        <td>CLOUD SHIRT</td>
+                        <td>350000đ</td>
+                        <td><button onclick="them(this)"> Chọn </button></td>
+                    </tr>
+                    </tbody>
+            </table>
+            <br style="margin:20px 0" />
+            <table id="cart">
+                <caption>GIỎ HÀNG CỦA BẠN</caption>
+            </table>
+            <h3>Tổng tiền: <span id="tong">0</span></h3>
+        </center>
+        </div>
+    </div>
+</body>
+
+</html>

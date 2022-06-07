@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>FPT Polytechnic</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+
+    <style>
+          .abc{
+                width: 600px;
+                background-color:whitesmoke;
+                box-shadow: 0 0 8px gray;
+                margin-left:400px ;
+                margin-top: 80px;
+                padding-left: 40px;
+                font-size: 25px;
+            }
+            .txt{
+                background-color: orangered;
+                color: black;
+                border: 1px none gray;
+                text-align: left;
+                width: 560px;
+                height: 30px;
+            }
+
+    </style>
+
+
+
+    <script>
+        function cau2() {
+            var username = document.forms[0].txtUsername.value;
+            var password = document.forms[0].txtPassword.value;
+
+            if (username == "") {
+                alert("Chưa nhập tên đăng nhập!");
+                return;
+            }
+            if (password == "") {
+                alert("Chưa nhập mật khẩu !");
+                return;
+            }
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <form action="#" method="POST" class="abc" onsubmit="return cau2();">
+        <h1>From Đăng Nhập</h1>
+        <p>
+            <label> Tên đăng nhập:</label>
+            <input type="text" name="txtUsername" class="txt">
+        </p>
+       <p>
+      
+            <label> Mật khẩu:</label>
+            <input type="text" name="txtPassword" class="txt">
+        </p>
+        <p>
+      
+       
+                <label>
+                    <input type="checkbox" name="chkRememberMe">
+                    Nhớ mật khẩu ?
+                </label>
+            </p>
+            
+        <hr>
+    
+            <input type="submit" value="Login">
+
+
+
+
+    </form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="assignment.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Montserrat:ital,wght@0,500;1,200&display=swap');
+    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="./image/favicon.ico.png">
+
+    <script>
+        var dh = null;
+
+        function tg() {
+            //2. lấy ngày giờ hệ thống 
+            var now = new Date();
+            //3.lấy giờ phút giây ra
+            var h = now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+            //4. nếu giờ <10 ta thêm số '0' phía trước cho đẹp
+            if (h < 10) {
+                h = "0" + h;
+            }   
+            if (m < 10) {
+                m = "0" + m;    
+            }
+            if (s < 10) {
+                s = "0" + s;
+            }
+            document.getElementById("dongho").innerHTML = h + ":" + m + ":" + s;
+        }
+        dh = setInterval("tg()", 1000);
+
+        function startstophd() {
+            if (dh == null) {
+                dh = setInterval("tg()", 1000);
+            } else {
+                clearInterval(dh);
+                dh = null;
+            }
+        }
+        // setTimeout(function () {
+        //     alert("xin chào Tôi là Thuat");
+        //     alert("Chúc ae 1 ngày tốt lành!!");
+        // }, 10000)
+
+    </script>
+</head>
+
+<body>
+    <script src="https://uhchat.net/code.php?f=777dc6"></script>
+    <div class="container">
+        <header>
+            <div class="top-left">
+                <img src="./images/anh.jpg" align width="200px" height="70px">
+            </div>
+            <input type="text" name="search" class="search" placeholder="Tìm kiếm" />
+            <div class="acc">
+                <li><a href="dangnhap.html" target="page"> Đăng nhập</a></li>
+                <li><a href="dangky.html" target="page"> Đăng ký</a></li>
+                <li><a href="pw.html" target="page"> Quên mật khẩu</a></li>
+            </div>
+            <div id="dongho">ĐỒNG HỒ</div>
+            <div id="nut">
+                <button onclick="startstophd()">DỪNG</button>
+                <button onclick="setTimeout()">NẠP LẠI</button>
+            </div>
+        </header>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="home.html" target="page">Trang chủ </a></li>
+                <li><a href="about.html" target="page">Giới thiệu</a></li>
+                <li>
+                    <a href="#">Sản phẩm</a>
+                    <ul>
+                        <a href="ao.html" target="page">Áo</a>
+                        <a href="quan.html" target="page">Quần</a>
+                        <a href="giay.html" target="page">Giày</a>
+                        <a href="phukien.html" target="page">Phụ kiện</a>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Thương hiệu</a>
+                    <ul>
+                        <a href="gucci.html" target="page">gucci</a>
+                        <a href="fog.html" target="page">Fear of god</a>
+                        <a href="lv.html" target="page">louis vuitton</a>
+                        <a href="given.html" target="page">givenchi</a>
+                    </ul>
+                </li>
+                <li><a href="contact.html" target="page">Liên hệ</a></li>
+                <li><a href="gallery.html" target="page">Gallery</a></li>
+                <li><a href="media.html" target="page">Media</a></li>
+                <li><a href="giohang.html" target="page">Giỏ hàng </a></li>
+                
+            </ul>
+        </nav>
+        <article>
+            <iframe name="page" src="home.html" scrolling="auto" frameborder="0"></iframe>
+            <!-- <iframe name="page" src="tinhtien.html" scrolling="auto" frameborder="0"> </iframe> -->
+        </article>
+        <aside></aside>
+        <footer>
+
+            Email: lehoangthuat2002@gmail.com <br>
+        </footer>
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            
+            .abc{
+                width: 600px;
+                background-color:whitesmoke;
+                box-shadow: 0 0 8px gray;
+                margin-left:400px ;
+                margin-top: 80px;
+                padding-left: 40px;
+                font-size: 25px;
+            }
+            .txt{
+                background-color: orangered;
+                color: black;
+                border: 1px none gray;
+                text-align: left;
+                width: 560px;
+                height: 30px;
+            }
+            .btn{
+                background-color: rgb(194, 122, 128);
+                width: 120px;
+                padding: 10px;
+                font-size: 22px;
+                border: 1px solid orangered;
+                
+            }
+            .dongcuoi{
+                text-align: center;
+            }
+            h1{
+                color: #FF1493;
+                font-size: 30px;
+                margin-top: 0px;
+                text-align: center;
+            }
+            #ht{
+                height: 30px;
+            }
+            #ha{
+                height: 30px;
+            }
+            #qg{
+                height: 30px;
+            }
+            #msv{
+                height: 30px;
+            }
+            #email{
+                height: 30px;
+            }
+            #ns{
+                height: 30px;
+                width: 50px;
+            }
+        </style>
+            <script>
+                function validate() {
+                    var hosv = document.forms[0].hosv.value;
+                var tensv = document.forms[0].tensv.value;
+                var ns = document.forms[0].nssv.value;
+                var gioitinh = document.forms[0].gioitinh.value;
+                var sdt = document.forms[0].sdtsv.value;
+        
+                    if (hosv == "") {
+                        alert("Bạn Phải Nhập Họ !");
+                        return;
+                    }
+                    if (tensv == "") {
+                        alert("bạn Phải Nhập Tên !");
+                        return;
+                    }
+                    if (nssv == "") {
+                        alert("Bạn Phải Nhập Ngày Sinh !");
+                        return;
+                    }
+                    if (gioitinh == "") {
+                        alert("Bạn Phải Nhập Giới Tính !");
+                        return;
+                    }
+                    if (sdtsv == "") {
+                        alert("Bạn Phải Nhập Số Điện Thoại !");
+                        return;
+                    }
+                }
+            </script>
+    </head>
+<body>
+<form action="xuly.php" method="POST" class="abc" onsubmit="return validate();">
+    <h1>From Đăng Ký</h1>
+    <p>
+        <label for="ho">Họ: </label><br>
+        <input type="text" name="hosv" id="ho" class="txt">
+    </p>
+    <p>
+        <label for="ten">Tên: </label><br>
+        <input type="text" name="tensv" id="ten" class="txt">
+    </p>
+    <p>
+        <label for="ns">Ngày Sinh:</label> 
+        <span>Ngày: </span>
+        <input id="ns" name="nssv" type="number"/>
+        <span>Tháng: </span>
+        <input id="ns" name="nssv" type="number"/>
+        <span>Năm: </span>
+        <input id="ns" name="nssv" type="number"/>
+    </p>
+    <p>
+        Giới tính:
+        <input type="radio" name="gioitinh"> Nam
+        <input type="radio" name="gioitinh">Nữ
+    </p>
+    <p>
+        <label for="sdt">Số điện thoại: </label><br>
+        <input type="text" name="sdtsv" id="sdt" class="txt">
+    </p>
+    <p class="dongcuoi">
+        <input type="submit" class="btn" value="Đăng ký">
+    </p>
+
+</form>
+</body>
+</html>
